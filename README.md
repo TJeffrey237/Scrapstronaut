@@ -5,6 +5,7 @@ This enemy's behavior is made entirely using an GDextension node.
 Otherwise, the gameplay loop remains the same. Collect as much scrap as possible and avoid the obstacles!
 
 ## IMPORTANT
+Assignment 2 is located entirely within the assign 2 folder in this branch!! Everything else except the readme is not a part of this assignment!!
 Edits were made to the SCONS file that allows the bin to be made within the necessary files. I'm not sure how this code will function without the SCONS file I have here so if something goes wrong please let me know. My email is tsj78@nau.edu.
 
 ## Behavior
