@@ -13,8 +13,11 @@ In order to properly rotate and chase the player, the process function will cont
 
 After the timer expires or the player hits the ufo, signals on_hit for player collisions and destroy_ufo for timer expiration will be emitted to handle the destruction of the ufo. Player collisions act as a signal that trigggers the ufo's on_hit method whereas the timer expiration will sends out the destruction signal to update the score accordingly.
 
+Some other notable pieces of code is at the start of the ready function which disables editor functionality as well as binding for all of the methods/signals that were described here.
+
 ## Inspector Edits
 With the inspector, the turn rate and speed of the ufo can be changed. This will affect how quickly the ufo is able to re-orient itself towards the player and how fast it travels.
+This is achieved using the get and set functions for speed and turn rate that are defined within the cpp file.
 
 ## How Does Collision Work?
 As a Sprite2D node, the ufo does not have innate collision with the player. This is resolved by adding an Area2D node as a child of the ufo to allow for collisions.
