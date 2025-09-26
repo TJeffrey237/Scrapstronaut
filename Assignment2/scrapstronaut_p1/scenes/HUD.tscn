@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxuitjko4o6lu"]
+
+[ext_resource type="Script" uid="uid://cfsgoroae22cn" path="res://scripts/hud.gd" id="1_qpvh6"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_qpvh6")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -342.0
+offset_top = 104.0
+offset_right = 342.0
+offset_bottom = 214.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "Get Ready.."
+horizontal_alignment = 1
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -90.0
+offset_right = 217.0
+offset_bottom = -21.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = 34.0
+offset_right = 162.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back to Menu"
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

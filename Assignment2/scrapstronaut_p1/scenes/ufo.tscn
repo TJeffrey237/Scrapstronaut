@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce1gkgqepu0pa"]
+
+[ext_resource type="Texture2D" uid="uid://83qq2rixfc62" path="res://assets/ufo.png" id="1_rotgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rotgi"]
+size = Vector2(11.75, 8)
+
+[node name="UFO" type="UFO"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_rotgi")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.125, 0)
+shape = SubResource("RectangleShape2D_rotgi")

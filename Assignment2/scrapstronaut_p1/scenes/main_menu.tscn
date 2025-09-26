@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://ya3ey6elvhln"]
+
+[ext_resource type="Script" uid="uid://472dlttaab81" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cr5f53aikcvw1" path="res://icon.svg" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 960.0
+offset_bottom = 541.0
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 959.0
+offset_bottom = 540.0
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="TitleCard" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.5
+offset_top = 91.0
+offset_right = 205.5
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Scrapstronaut"
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = 48.5
+offset_right = 138.0
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Start" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -87.5
+offset_right = 125.5
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Collect scrap to repair your ship!"
+
+[node name="Keybinds" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -183.0
+offset_right = 146.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "Controls:
+W - Move Up
+A - Move Left
+S - Move Down
+D - Move Right"
+
+[node name="GDExample" type="GDExample" parent="."]
+texture = ExtResource("2_ekxnf")
+centered = false
+
+[connection signal="pressed" from="ButtonsContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Exit" to="." method="_on_exit_pressed"]
