@@ -1,5 +1,5 @@
 # Scrapstronaut Part 3 Description
-The third iteration of this game introduces a visual flocking effect for coin collection. The player is unable to interact with these directly because they are used purely for visual effect.
+The third iteration of this game introduces a visual flocking effect for coin collection. The player is unable to interact with these directly because they are used purely for visual effect, however this creates a more immersive experience by providing extra layers of feedback between player actions ans system results.
 
 ## Behavior
 Whenever a coin is collected, a flock of boids spawn at the player's position and head for the score counter. They will then dissapear once their target is reached.
