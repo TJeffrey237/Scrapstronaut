@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnupugj62kcsr"]
+
+[ext_resource type="Texture2D" uid="uid://0dcgmyowerbg" path="res://assets/scrap1.png" id="1_two45"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1w7aq"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture = ExtResource("1_two45")
+process_material = SubResource("ParticleProcessMaterial_1w7aq")

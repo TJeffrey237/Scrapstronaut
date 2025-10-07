@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx0wiciqgj5um"]
+
+[ext_resource type="Texture2D" uid="uid://0dcgmyowerbg" path="res://assets/scrap1.png" id="1_n4whh"]
+[ext_resource type="Script" uid="uid://b0aq5tepjxiqj" path="res://scripts/Boid.cs" id="1_vrn0v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4whh"]
+radius = 23.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4whh"]
+radius = 6.0
+height = 22.0
+
+[node name="Boid" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_vrn0v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n4whh")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_n4whh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_n4whh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-8, -6)
+rect = Rect2(-10, -10, 37, 33)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="BoidExitedScreen"]

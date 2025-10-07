@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd5e6dijdcvv4"]
+
+[ext_resource type="Script" uid="uid://dxb5ufh1dyoik" path="res://scripts/BoidSpawner.cs" id="1_wsgte"]
+[ext_resource type="PackedScene" uid="uid://bx0wiciqgj5um" path="res://scenes/boid.tscn" id="2_m60l6"]
+
+[node name="BoidSpawner" type="Node2D"]
+script = ExtResource("1_wsgte")
+BoidScene = ExtResource("2_m60l6")

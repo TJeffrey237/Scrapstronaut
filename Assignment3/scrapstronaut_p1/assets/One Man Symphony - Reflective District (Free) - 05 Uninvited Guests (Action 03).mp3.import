@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6b4rq1vgb2au"
+path="res://.godot/imported/One Man Symphony - Reflective District (Free) - 05 Uninvited Guests (Action 03).mp3-3352e70d71da484d982a628295ea933d.mp3str"
+
+[deps]
+
+source_file="res://assets/One Man Symphony - Reflective District (Free) - 05 Uninvited Guests (Action 03).mp3"
+dest_files=["res://.godot/imported/One Man Symphony - Reflective District (Free) - 05 Uninvited Guests (Action 03).mp3-3352e70d71da484d982a628295ea933d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

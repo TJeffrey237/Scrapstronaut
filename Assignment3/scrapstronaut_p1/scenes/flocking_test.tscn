@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckpdj6cr3x151"]
+
+[ext_resource type="PackedScene" uid="uid://cd5e6dijdcvv4" path="res://scenes/boid_spawner.tscn" id="1_7ko1b"]
+[ext_resource type="PackedScene" uid="uid://cx2xwf00d0r4k" path="res://scenes/boid_target.tscn" id="2_bj1q3"]
+[ext_resource type="PackedScene" uid="uid://dq7dbgyeoyb1p" path="res://scenes/astronaut.tscn" id="3_v8eyb"]
+[ext_resource type="PackedScene" uid="uid://bracuofm1if7y" path="res://scenes/scrap.tscn" id="4_7ko1b"]
+
+[node name="flockingTest" type="Node2D"]
+
+[node name="BoidTarget" parent="." groups=["BoidTarget"] instance=ExtResource("2_bj1q3")]
+position = Vector2(195, 93)
+
+[node name="astronaut" parent="." instance=ExtResource("3_v8eyb")]
+position = Vector2(854, 90)
+
+[node name="scrap" parent="." instance=ExtResource("4_7ko1b")]
+position = Vector2(591, 208)
+
+[node name="BoidSpawner" parent="." instance=ExtResource("1_7ko1b")]
+position = Vector2(593, 210)
+
+[connection signal="collect" from="astronaut" to="BoidSpawner" method="CoinCollect"]
